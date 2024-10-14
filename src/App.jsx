@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function App() {
 
-  const [isPolicyVisible, setIsPolicyVisible] = useState(true);
+  const [isPolicyVisible, setIsPolicyVisible] = useState(false);
   function togglePoliticaVisibility() {
     setIsPolicyVisible(prev => !prev)
   }
