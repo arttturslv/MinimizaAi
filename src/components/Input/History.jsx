@@ -40,9 +40,9 @@ export default function History({togglePoliticaVisibility, urlList}) {
 function HistoryItem({shortLink, URL}) {
 
     function handleCopyLink(link) {
-        console.log("eadae")
+        let currentUrl = window.location.href;
         try {
-            navigator.clipboard.writeText(link);
+            navigator.clipboard.writeText(currentUrl+link);
         } catch (error) {   
             console.log("Erro ao copiar: ", error)
         }
