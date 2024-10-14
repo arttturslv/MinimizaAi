@@ -13,7 +13,7 @@ function App() {
   }
 
   return (
-    <div className="bg-jet w-full flex flex-col h-screen">
+    <div className="bg-jet w-full flex flex-col h-screen max-sm:px-2">
       <HomeInformation/>
       <Input togglePoliticaVisibility={togglePoliticaVisibility}/>
       <Footer togglePoliticaVisibility={togglePoliticaVisibility}/>

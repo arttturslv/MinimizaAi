@@ -39,7 +39,7 @@ function HistoryItem({shortLink, URL}) {
 
     return (
         <div className="flex gap-3 my-2">
-            <div className="w-[640px] bg-eerieBlackDark px-4 py-2 rounded-xl text-seaSalt">
+            <div className="max-w-[640px] w-full bg-eerieBlackDark px-4 py-2 rounded-xl text-seaSalt">
                 <span>
                     <div className="flex gap-2 cursor-pointer">
                         <p className="text-celticBlue underline">{shortLink}</p>
