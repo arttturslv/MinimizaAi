@@ -1,5 +1,5 @@
 import History from "./History"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import {encurtar} from "../../API/useApi";
 
 export default function Input({togglePoliticaVisibility}) {
@@ -61,6 +61,22 @@ export default function Input({togglePoliticaVisibility}) {
             return false;
         }   
     }
+
+
+    const [urlList, setUrlList] = useState([]);
+
+    useEffect(() => {
+        setUrlList(getAllUrls());
+    }, [isLoading]);
+
+    function getAllUrls() {
+        let allLinks = localStorage.getItem('allLinks');
+        allLinks = allLinks!=null ? JSON.parse(allLinks): []
+
+        return allLinks;
+    }
+
+
  
     return (
         <div className="w-full flex justify-center flex-1">
@@ -68,7 +84,7 @@ export default function Input({togglePoliticaVisibility}) {
                 <div className="bg-eerieBlack px-8 py-5 rounded-3xl">
                     <form onSubmit={(e)=>handleSend(e)} action="">
                         <div className=" flex gap-3">
-                            <input onChange={(e)=> handleChange(e)} value={inputValue} className="max-w-[640px] w-full bg-jet px-4 py-2 rounded-xl text-seaSalt" type="text" name="" id="" placeholder="Insira o link aqui" />
+                            <input onChange={(e)=> handleChange(e)} value={inputValue} className="w-[640px] max-sm:w-full bg-jet px-4 py-2 rounded-xl text-seaSalt" type="text" name="" id="" placeholder="Insira o link aqui" />
                             
                             <button  type="submit" >
                                 <div className="p-2 bg-eerieBlack rounded-xl hover:bg-eerieBlack/60 cursor-pointer">
@@ -86,7 +102,7 @@ export default function Input({togglePoliticaVisibility}) {
                         { !isURLValid && <p className="text-xs text-[red]/40 -mb-2">A link digitado não é válido! Verifique a presença do protocolo: "https://".</p>}
                     </form>
                 </div>
-                <History togglePoliticaVisibility={togglePoliticaVisibility}/>
+                <History togglePoliticaVisibility={togglePoliticaVisibility} urlList={urlList}/>
             </div> 
         </div>
     )

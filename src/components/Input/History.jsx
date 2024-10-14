@@ -1,16 +1,32 @@
-export default function History({togglePoliticaVisibility}) {
+import { useEffect, useState } from "react"
+
+export default function History({togglePoliticaVisibility, urlList}) {
+   
 
     return (
         <div className="bg-eerieBlackLight top-10 px-8 py-1 rounded-3xl">
-            <p className="text-seaSalt"> 
-                Ao usar o aplicativo, você concorda com nossos ‎
-                <a className="text-celticBlue underline cursor-pointer" onClick={togglePoliticaVisibility}>termos e condições</a>
-                ‎
-                e
-                ‎
-                <a className="text-celticBlue underline cursor-pointer" onClick={togglePoliticaVisibility}>politica de privacidade</a>
-                .
-            </p>
+            {
+                urlList.length>0 ?
+                    urlList.map((item, index) => (
+                        <HistoryItem key={index} 
+                            shortLink={item.shortLink}
+                            URL={item.original}  
+                        />
+                    ))
+                :
+
+                <p className="text-seaSalt"> 
+                    Ao usar o aplicativo, você concorda com nossos ‎
+                    <a className="text-celticBlue underline cursor-pointer" onClick={togglePoliticaVisibility}>termos e condições</a>
+                    ‎
+                    e
+                    ‎
+                    <a className="text-celticBlue underline cursor-pointer" onClick={togglePoliticaVisibility}>politica de privacidade</a>
+                    .
+                </p>
+            }
+            
+            
 
             {/* <HistoryItem 
                 shortLink={"s.artttur.com/asdauj13"}
@@ -46,7 +62,7 @@ function HistoryItem({shortLink, URL}) {
                         <img height={16} className="object-contain" src="/src/assets/copy.png" onClick={handleCopyLink} alt="icone de enviar" />
                     </div>
                     
-                    <p className="hover:text-celticBlue underline cursor-pointer text-seaSalt" onClick={handleOpen}>{URL}</p>
+                    <p className="hover:text-celticBlue underline cursor-pointer text-seaSalt text-wrap whitespace-break-spaces text-ellipsis break-all w-[90%]" onClick={handleOpen}>{URL}</p>
                 </span>
             </div>
             <button type="submit" >
