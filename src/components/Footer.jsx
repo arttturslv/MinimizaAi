@@ -5,7 +5,7 @@ export default function Footer({togglePoliticaVisibility}) {
     }
 
     return (
-        <div className="w-full flex justify-center ">
+        <div className="w-full flex justify-center mt-16 ">
             <div className="bg-eerieBlackLight flex gap-4 px-4 py-2 my-2 rounded-xl">
             <button type="button" onClick={togglePoliticaVisibility} className="bg-eerieBlack px-4 py-3 rounded-xl cursor-pointer group hover:bg-eerieBlack/60 ">
                 <p className="text-seaSalt group-hover:text-celticBlue transition-colors">Acessar politicas de privacidade</p>
