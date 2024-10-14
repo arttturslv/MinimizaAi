@@ -1,0 +1,1 @@
+export const API = "https://encurtador-url-node.vercel.app/"
