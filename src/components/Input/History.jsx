@@ -39,30 +39,33 @@ export default function History({togglePoliticaVisibility, urlList}) {
 
 function HistoryItem({shortLink, URL}) {
 
-    function handleCopyLink() {
-        console.log("copiado")
+    function handleCopyLink(link) {
+        console.log("eadae")
+        try {
+            navigator.clipboard.writeText(link);
+        } catch (error) {   
+            console.log("Erro ao copiar: ", error)
+        }
     }
 
-    function handleOpen(URL) {
-        console.log(URL)
-        window.open("https://www.github.com/arttturslv", "_blank")
+    function handleOpen(link) {
+        window.open(link, "_blank")
     }
 
     function handleDelete() {
-        console.log(URL)
-        window.open("https://www.github.com/arttturslv", "_blank")
+        console.log("Deletar")
     }
 
     return (
         <div className="flex gap-3 my-2">
             <div className="max-w-[640px] w-full bg-eerieBlackDark px-4 py-2 rounded-xl text-seaSalt">
                 <span>
-                    <div className="flex gap-2 cursor-pointer">
+                    <div onClick={() => handleCopyLink(shortLink)} className="flex gap-2 cursor-pointer">
                         <p className="text-celticBlue underline">{shortLink}</p>
-                        <img height={16} className="object-contain" src="/src/assets/copy.png" onClick={handleCopyLink} alt="icone de enviar" />
+                        <img height={16} className="object-contain" src="/src/assets/copy.png"  alt="icone de enviar" />
                     </div>
                     
-                    <p className="hover:text-celticBlue underline cursor-pointer text-seaSalt text-wrap whitespace-break-spaces text-ellipsis break-all w-[90%]" onClick={handleOpen}>{URL}</p>
+                    <p className="hover:text-celticBlue underline cursor-pointer text-seaSalt text-wrap whitespace-break-spaces text-ellipsis break-all w-[90%]" onClick={() => handleOpen(URL)}>{URL}</p>
                 </span>
             </div>
             <button type="submit" >
