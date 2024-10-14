@@ -13,14 +13,14 @@ function Home() {
   }
 
   return (
-    <>
+    <div className="bg-jet w-full flex flex-col min-h-screen max-sm:px-2">
       <HomeInformation/>
       <Input togglePoliticaVisibility={togglePoliticaVisibility}/>
       <Footer togglePoliticaVisibility={togglePoliticaVisibility}/>
       {
         isPolicyVisible && <Politica togglePoliticaVisibility={() => togglePoliticaVisibility()}/>
       }
-    </>
+    </div>
   )
 }
 
