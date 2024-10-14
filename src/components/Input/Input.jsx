@@ -1,5 +1,5 @@
 import History from "./History"
-export default function Input() {
+export default function Input({togglePoliticaVisibility}) {
 
     function handleSend() {
         console.log("enviar")
@@ -18,7 +18,7 @@ export default function Input() {
                         </button>
                     </form>
                 </div>
-                <History/>
+                <History togglePoliticaVisibility={togglePoliticaVisibility}/>
             </div> 
         </div>
     )

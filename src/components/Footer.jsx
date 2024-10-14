@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function Footer({togglePoliticaVisibility}) {
 
     function handleGithub() {
         window.open("https://www.github.com/arttturslv", "_blank")
@@ -7,9 +7,9 @@ export default function Footer() {
     return (
         <div className="w-full flex justify-center bg-">
             <div className="bg-eerieBlackLight flex gap-4 px-4 py-2 my-2 rounded-xl">
-            <div className="bg-eerieBlack px-4 py-3 rounded-xl cursor-pointer group hover:bg-eerieBlack/60 ">
+            <button type="button" onClick={togglePoliticaVisibility} className="bg-eerieBlack px-4 py-3 rounded-xl cursor-pointer group hover:bg-eerieBlack/60 ">
                 <p className="text-seaSalt group-hover:text-celticBlue transition-colors">Acessar politicas de privacidade</p>
-            </div>
+            </button>
             <div className="flex gap-3">
                 <div className="bg-eerieBlack px-4 py-3 rounded-xl">
                     <p className="text-seaSalt">Esse aplicativo foi desenvolvido pelo Artttur</p>

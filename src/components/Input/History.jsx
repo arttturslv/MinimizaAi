@@ -1,11 +1,21 @@
-export default function History() {
+export default function History({togglePoliticaVisibility}) {
 
     return (
         <div className="bg-eerieBlackLight top-10 px-8 py-1 rounded-3xl">
-            <HistoryItem 
+            <p className="text-seaSalt"> 
+                Ao usar o aplicativo, você concorda com nossos ‎
+                <a className="text-celticBlue underline cursor-pointer" onClick={togglePoliticaVisibility}>termos e condições</a>
+                ‎
+                e
+                ‎
+                <a className="text-celticBlue underline cursor-pointer" onClick={togglePoliticaVisibility}>politica de privacidade</a>
+                .
+            </p>
+
+            {/* <HistoryItem 
                 shortLink={"s.artttur.com/asdauj13"}
                 URL={"https://www.youtube.com/watch?v=tFAE_CHUyFs"}  
-            />
+            /> */}
         </div>
     )
 }
