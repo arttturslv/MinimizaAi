@@ -12,3 +12,27 @@ html, body {
 *, *::before, *::after {
   box-sizing: inherit; /* Para garantir que todos os elementos usem a mesma box-sizing */
 }
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  cursor: pointer;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333333;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #535353;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5c5b5b;
+}
