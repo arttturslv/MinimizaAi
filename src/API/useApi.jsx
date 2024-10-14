@@ -29,3 +29,27 @@ export async function encurtar (inputValue) {
 
     return {data, error}
 }
+
+
+export async function alongar (id) {
+    let data = null, error = null;
+    
+    try {
+        const response = await fetch(`${API}${id}`, {
+            method: 'GET',
+        });
+
+        if(!response.ok) {
+            throw new Error("Erro ao buscar dados");
+        }
+
+        const result = await response.json();
+        data = result.original;
+
+    } catch (err) {
+        console.log("Erro no GET: ", err)
+        error = err;
+    } 
+
+    return {data, error}
+}
