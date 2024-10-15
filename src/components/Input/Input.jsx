@@ -1,19 +1,24 @@
+import { useState, useEffect } from "react"
+
 import History from "./History"
 import Button from "../Button";
-import { useState, useEffect } from "react"
-import {encurtar} from "../../API/useApi";
+
+import { updateLocally, retriveLocally, storeLocally, hasValidURL } from '../../API/Utils.js'
+import { encurtar } from "../../API/useApi";
 
 export default function Input({togglePoliticaVisibility}) {
     const [inputValue, setInputValue] = useState('');
     const [isURLValid, setIsURLValid] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
-    
+    const [urlList, setUrlList] = useState([]);
     const [hasError, setHasError] = useState(false);
 
+    useEffect(() => {
+        setUrlList(retriveLocally());
+    }, [isLoading]);
 
     async function handleSend(e) {
         e.preventDefault();
-        console.log("enviar")
 
         setIsLoading(true); 
         const {data, error} = await encurtar(inputValue);
@@ -23,13 +28,10 @@ export default function Input({togglePoliticaVisibility}) {
             setHasError(error);
             return;
         }
-
         storeLocally(data);
-
     }
 
     function storeLocally(response) {
-        console.log(response)
         const objectURL = {
             shortLink : response.encurtado,
             original : response.original,
@@ -37,50 +39,14 @@ export default function Input({togglePoliticaVisibility}) {
             data : response.data,
             id: response._id
         }
-        console.log('response.id: ', response.id);
-
-        let allLinks = localStorage.getItem("allLinks");
-        allLinks = allLinks != null ? JSON.parse(allLinks) : [];
-        allLinks.push(objectURL);
-
-        localStorage.setItem('allLinks', JSON.stringify(allLinks))
+        updateLocally(objectURL);
     }
 
-
-
     function handleChange(e) {
-        e.preventDefault();
         setInputValue(e.currentTarget.value);
         setIsURLValid(hasValidURL(e.currentTarget.value));
     }
 
-    function hasValidURL(input) {
-        let url;
-        try {
-            url = new URL(input);
-            console.log(url)
-            return true;
-        } catch (error) {
-            return false;
-        }   
-    }
-
-
-    const [urlList, setUrlList] = useState([]);
-
-    useEffect(() => {
-        setUrlList(getAllUrls());
-    }, [isLoading]);
-
-    function getAllUrls() {
-        let allLinks = localStorage.getItem('allLinks');
-        allLinks = allLinks!=null ? JSON.parse(allLinks): []
-
-        return allLinks;
-    }
-
-
- 
     return (
         <div className="w-full flex justify-center flex-1">
             <div className="bg-eerieBlackLight rounded-3xl h-min shadow-s-input-box">
