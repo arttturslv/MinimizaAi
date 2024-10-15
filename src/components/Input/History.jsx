@@ -38,11 +38,19 @@ export default function History({togglePoliticaVisibility, urlList}) {
 
 
 function HistoryItem({shortLink, URL}) {
+    const [wasCopied, setWasCopied] = useState(false);
+
 
     function handleCopyLink(link) {
         let currentUrl = window.location.href;
         try {
             navigator.clipboard.writeText(currentUrl+link);
+            setWasCopied(true);
+
+            setTimeout(()=> {
+                setWasCopied(false)
+            }, 1000)
+
         } catch (error) {   
             console.log("Erro ao copiar: ", error)
         }
@@ -59,9 +67,15 @@ function HistoryItem({shortLink, URL}) {
     return (
         <div className="flex gap-3 my-2">
             <div className="max-w-[640px] w-full bg-eerieBlackDark px-4 py-2 rounded-xl text-seaSalt">
-                <span>
+                <span className="">
                     <div onClick={() => handleCopyLink(shortLink)} className="flex gap-2 cursor-pointer">
-                        <p className="text-celticBlue underline">{shortLink}</p>
+                        {
+                            wasCopied ? 
+                            <p className="font-extralight text-celticBlue ">O link foi copiado!</p>
+                                :
+                            <p className="text-celticBlue underline">{shortLink}</p>
+                        }
+
                         <img height={16} className="object-contain" src="https://i.imgur.com/6E7nm2P.png"  alt="icone de enviar" />
                     </div>
                     
