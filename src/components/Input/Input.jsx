@@ -91,9 +91,9 @@ export default function Input({togglePoliticaVisibility}) {
                                    
                                    {
                                      !isLoading?
-                                     <img width={32} height={32} src="https://short.artttur.com/src/assets/arrow-right.png" alt="icone de enviar" />
+                                     <img width={32} height={32} src="https://i.imgur.com/50Y8SLg.png" alt="icone de enviar" />
                                      :
-                                     <img width={32} height={32} className=" animate-spin" src="https://short.artttur.com/src/assets/loading.png" alt="icone de carregamento" />
+                                     <img width={32} height={32} className=" animate-spin" src="https://i.imgur.com/Jv0GKTg.png" alt="icone de carregamento" />
 
                                    }
                                 </div>
