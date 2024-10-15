@@ -28,13 +28,15 @@ export default function Input({togglePoliticaVisibility}) {
     }
 
     function storeLocally(response) {
-
+        console.log(response)
         const objectURL = {
             shortLink : response.encurtado,
             original : response.original,
             visitas : response.visitas,
-            data : response.data
+            data : response.data,
+            id: response._id
         }
+        console.log('response.id: ', response.id);
 
         let allLinks = localStorage.getItem("allLinks");
         allLinks = allLinks != null ? JSON.parse(allLinks) : [];
@@ -102,7 +104,7 @@ export default function Input({togglePoliticaVisibility}) {
                         { !isURLValid && <p className="text-xs text-[red]/40 -mb-2">A link digitado não é válido! Verifique a presença do protocolo: "https://".</p>}
                     </form>
                 </div>
-                <History togglePoliticaVisibility={togglePoliticaVisibility} urlList={urlList}/>
+                <History togglePoliticaVisibility={togglePoliticaVisibility} urlList={urlList} setUrlList={setUrlList}/>
             </div> 
         </div>
     )

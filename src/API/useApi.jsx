@@ -53,3 +53,16 @@ export async function alongar (id) {
 
     return {data, error}
 }
+
+export async function deleteById(id) {
+    try {
+        const response= await fetch(`${API}${id}`, {
+            method: 'DELETE',
+        })
+
+        if(!response.ok) throw new Error("Erro ao apagar URL")
+
+    } catch (error) {
+        console.log("Erro no delete: ", error);
+    }
+}
