@@ -6,7 +6,7 @@ export default function PoliticaPrivacidade({togglePoliticaVisibility}) {
                     <h3 className="text-2xl flex-grow font-semibold text-center">Politica de privacidade</h3>
                     <button onClick={togglePoliticaVisibility} type="button" >
                                 <div className="p-2 bg-jet rounded-xl hover:bg-jet/60 cursor-pointer">
-                                    <img width={32} height={32} className=" rotate-180" src="/src/assets/arrow-right.png" alt="icone de enviar" />
+                                    <img width={32} height={32} className=" rotate-180" src="https://i.imgur.com/50Y8SLg.png" alt="icone de enviar" />
                                 </div>
                     </button>
                 </div>

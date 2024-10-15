@@ -30,7 +30,7 @@ function Redirect() {
         <div className="bg-jet w-full flex justify-center items-center h-screen ">
             {
                 !hasError ?
-                    <img className=" animate-spin " width={32} height={32} src="/src/assets/loading.png" alt="" srcset="" />
+                    <img className=" animate-spin " width={32} height={32} src="https://i.imgur.com/Jv0GKTg.png" alt="" srcset="" />
                 :
                     <div className="flex-col justify-center items-center ">
                         <p className="text-[red]/50 font-semibold text-xl">Error desconhecido!</p>
