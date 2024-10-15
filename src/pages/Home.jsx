@@ -1,7 +1,7 @@
 import Footer from "../components/Footer";
 import Input from "../components/Input/Input";
 import HomeInformation from "../components/HomeInformation";
-import Politica from "../components/PoliticaPrivacidade";
+import Politica from "../components/Privacy/PoliticaPrivacidade";
 
 import { useState } from "react";
 

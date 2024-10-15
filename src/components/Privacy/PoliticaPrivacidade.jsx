@@ -1,4 +1,4 @@
-import Button from '../components/Button';
+import Button from '../Button';
 import Paragraph from './Paragraph';
 
 export default function PoliticaPrivacidade({togglePoliticaVisibility}) {
