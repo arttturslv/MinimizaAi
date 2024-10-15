@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
+import {deleteById} from "../../API/useApi";
 
-export default function History({togglePoliticaVisibility, urlList}) {
+export default function History({togglePoliticaVisibility, urlList, setUrlList}) {
    
 
     return (
@@ -11,6 +12,8 @@ export default function History({togglePoliticaVisibility, urlList}) {
                         <HistoryItem key={index} 
                             shortLink={item.shortLink}
                             URL={item.original}  
+                            Id={item.id}
+                            setUrlList={setUrlList}
                         />
                     ))
                 :
@@ -26,19 +29,14 @@ export default function History({togglePoliticaVisibility, urlList}) {
                 </p>
             }
             
-            
-
-            {/* <HistoryItem 
-                shortLink={"s.artttur.com/asdauj13"}
-                URL={"https://www.youtube.com/watch?v=tFAE_CHUyFs"}  
-            /> */}
         </div>
     )
 }
 
 
-function HistoryItem({shortLink, URL}) {
+function HistoryItem({shortLink, URL, Id, setUrlList}) {
     const [wasCopied, setWasCopied] = useState(false);
+    const [onLoading, setOnLoading] = useState(false);
 
 
     function handleCopyLink(link) {
@@ -60,8 +58,25 @@ function HistoryItem({shortLink, URL}) {
         window.open(link, "_blank")
     }
 
-    function handleDelete() {
-        console.log("Deletar")
+    async function handleDelete() {
+
+        console.log(Id);
+        try {
+            setOnLoading(true);
+            await deleteById(Id);
+
+            let allLinks = localStorage.getItem('allLinks');
+            allLinks = allLinks !=null ? JSON.parse(allLinks) : [];
+
+            const newArray = allLinks.filter((item) => item.id != Id) || [];
+            setUrlList(newArray);
+            
+            localStorage.setItem('allLinks', JSON.stringify(newArray));
+
+            setOnLoading(false);
+        } catch (error) {
+            console.log("Erro no history ao deletar: ", error)
+        }
     }
 
     return (
@@ -82,9 +97,15 @@ function HistoryItem({shortLink, URL}) {
                     <p className="hover:text-celticBlue underline cursor-pointer text-seaSalt text-wrap whitespace-break-spaces text-ellipsis break-all w-[90%]" onClick={() => handleOpen(URL)}>{URL}</p>
                 </span>
             </div>
-            <button disabled={true} type="submit" >
-                <div className="p-2 hidden bg-eerieBlack rounded-xl hover:bg-eerieBlack/60 cursor-pointer">
-                    <img width={32} height={32} src="https://i.imgur.com/VghKyeE.png" onClick={handleDelete} alt="icone de deletar" />
+            <button disabled={onLoading} type="submit" >
+                <div  onClick={handleDelete} className="p-2 hover:bg-[red]/10 bg-eerieBlack rounded-xl cursor-pointer">
+                    
+                    {
+                        !onLoading?
+                        <img width={32} height={32} src="https://i.imgur.com/VghKyeE.png" alt="icone de deletar" />
+                        :
+                        <img width={32} height={32} className=" animate-spin" src="https://i.imgur.com/Jv0GKTg.png" alt="icone de carregamento" />
+                    }
                 </div>
             </button>
         </div>
