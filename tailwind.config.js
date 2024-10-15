@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        's-input-box': '4px 4px 10px 0px rgba(0, 0, 0, 0.5), -4px -4px 5px 0px rgba(255, 255, 255, 0.08)',
+        's-input': 'inset 4px 4px 10px 0px rgba(0, 0, 0, 0.4), inset -4px -4px 10px 0px rgba(255, 255, 255, 0.08)',
+      },
+    },
     colors: {
       jet:"#2C2D31",
       eerieBlack:"#161819",

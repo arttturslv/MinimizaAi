@@ -5,7 +5,7 @@ export default function HomeTitle() {
             <h1 className="text-6xl py-4 text-center">Minimiza URL</h1>
             <span className="flex justify-center">
               <div className="w-[80%]">
-                <p className="text-center">Minimiza URL é uma ferramenta gratuita para gerar links encurtados, permitindo que você compartilhe URLs longas de forma mais prática e conveniente. </p>
+                <p className="text-center">Minimiza URL é uma ferramenta gratuita para gerar links encurtados. </p>
                 <p className="text-center">Ideal para redes sociais, e-mails ou qualquer plataforma onde o espaço é limitado.</p>
               </div>
             </span>

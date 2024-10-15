@@ -1,11 +1,11 @@
 export default function PoliticaPrivacidade({togglePoliticaVisibility}) {
     return (
         <div className="w-full h-screen bg-jet/70 flex justify-center items-center absolute">
-            <div className="w-2/3 overflow-y-auto max-h-[66%] overflow-hidden p-2 py-6 bg-eerieBlack text-seaSalt rounded-3xl">
+            <div className="w-2/3 overflow-y-auto max-h-[66%] overflow-hidden p-2 py-6 bg-eerieBlack shadow-s-input-box text-seaSalt rounded-3xl">
                 <div className="flex items-center px-4">
                     <h3 className="text-2xl flex-grow font-semibold text-center">Politica de privacidade</h3>
                     <button onClick={togglePoliticaVisibility} type="button" >
-                                <div className="p-2 bg-jet rounded-xl hover:bg-jet/60 cursor-pointer">
+                                <div className="p-2 bg-jet shadow-s-input-box rounded-xl hover:bg-jet/60 cursor-pointer">
                                     <img width={32} height={32} className=" rotate-180" src="https://i.imgur.com/50Y8SLg.png" alt="icone de enviar" />
                                 </div>
                     </button>

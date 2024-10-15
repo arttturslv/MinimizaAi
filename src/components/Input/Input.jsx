@@ -82,14 +82,14 @@ export default function Input({togglePoliticaVisibility}) {
  
     return (
         <div className="w-full flex justify-center flex-1">
-            <div className="bg-eerieBlackLight rounded-3xl h-min">
+            <div className="bg-eerieBlackLight rounded-3xl h-min shadow-s-input-box">
                 <div className="bg-eerieBlack px-8 py-5 rounded-3xl">
                     <form onSubmit={(e)=>handleSend(e)} action="">
                         <div className=" flex gap-3">
-                            <input onChange={(e)=> handleChange(e)} value={inputValue} className="w-[640px] max-sm:w-full bg-jet px-4 py-2 rounded-xl text-seaSalt" type="text" name="" id="" placeholder="Insira o link aqui" />
+                            <input onChange={(e)=> handleChange(e)} value={inputValue} className="shadow-s-input w-[640px] max-sm:w-full bg-jet px-4 py-2 rounded-xl text-seaSalt" type="text" name="" id="" placeholder="Insira o link aqui" />
                             
                             <button disabled={isLoading} type="submit" >
-                                <div className="p-2 bg-eerieBlack rounded-xl transition-all hover:bg-eerieBlack/60 cursor-pointer">
+                                <div className="p-2 bg-eerieBlack rounded-xl shadow-s-input-box transition-all hover:bg-eerieBlack/60 cursor-pointer">
                                    
                                    {
                                      !isLoading?

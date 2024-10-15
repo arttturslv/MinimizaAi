@@ -5,31 +5,38 @@ export default function History({togglePoliticaVisibility, urlList, setUrlList})
    
 
     return (
-        <div className="bg-eerieBlackLight top-10 px-8 py-1 rounded-3xl">
-            {
-                urlList.length>0 ?
-                    urlList.map((item, index) => (
-                        <HistoryItem key={index} 
-                            shortLink={item.shortLink}
-                            URL={item.original}  
-                            Id={item.id}
-                            setUrlList={setUrlList}
-                        />
-                    ))
-                :
+        
+            urlList.length>0 && (
+                <div className="bg-eerieBlackLight top-10 px-8 py-1 rounded-3xl">
+                
+                       {
+                            urlList.map((item, index) => (
+                                <HistoryItem key={index} 
+                                    shortLink={item.shortLink}
+                                    URL={item.original}  
+                                    Id={item.id}
+                                    setUrlList={setUrlList}
+                                />
+                            ))
 
-                <p className="text-seaSalt"> 
-                    Ao usar o aplicativo, você concorda com nossos ‎
-                    <a className="text-celticBlue underline cursor-pointer" onClick={togglePoliticaVisibility}>termos e condições</a>
-                    ‎
-                    e
-                    ‎
-                    <a className="text-celticBlue underline cursor-pointer" onClick={togglePoliticaVisibility}>politica de privacidade</a>
-                    .
-                </p>
-            }
-            
-        </div>
+                    // <p className="text-seaSalt"> 
+                    //     Ao usar o aplicativo, você concorda com nossos ‎
+                    //     <a className="text-celticBlue underline cursor-pointer" onClick={togglePoliticaVisibility}>termos e condições</a>
+                    //     ‎
+                    //     e
+                    //     ‎
+                    //     <a className="text-celticBlue underline cursor-pointer" onClick={togglePoliticaVisibility}>politica de privacidade</a>
+                    //     .
+                    // </p>
+
+                       }
+                
+                
+                
+                </div>
+            )
+
+    
     )
 }
 
