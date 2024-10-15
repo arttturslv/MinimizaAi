@@ -15,7 +15,7 @@ export default function Footer({togglePoliticaVisibility}) {
                     <p className="text-seaSalt">Esse aplicativo foi desenvolvido pelo Artttur</p>
                 </div>
                 <div className="p-2 flex items-center bg-eerieBlack rounded-xl hover:bg-eerieBlack/60 cursor-pointer">
-                    <img width={32} height={32} src="/src/assets/github.png" onClick={handleGithub} alt="icone do github" />
+                    <img width={32} height={32} src="./../assets/github.png" onClick={handleGithub} alt="icone do github" />
                 </div>
             </div>
             </div>
