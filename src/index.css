@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
 html, body {
   height: 100%;
   margin: 0;
@@ -10,6 +12,7 @@ html, body {
 }
 
 *, *::before, *::after {
+  font-family: "Karla", sans-serif;
   box-sizing: inherit; /* Para garantir que todos os elementos usem a mesma box-sizing */
 }
 
