@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import History from "./History"
 import Button from "../Button";
 
-import { updateLocally, retriveLocally, storeLocally, hasValidURL } from '../../API/Utils.js'
+import { addLocally, retriveLocally, storeLocally, hasValidURL } from '../../API/Utils.js'
 import { encurtar } from "../../API/useApi";
 
 export default function Input({togglePoliticaVisibility}) {
@@ -39,7 +39,7 @@ export default function Input({togglePoliticaVisibility}) {
             data : response.data,
             id: response._id
         }
-        updateLocally(objectURL);
+        addLocally(objectURL);
     }
 
     function handleChange(e) {

@@ -38,8 +38,8 @@ export function retriveLocally() {
  * modificando no localhost.
  * @returns A lista atualizada.
  */
-export function updateLocally(newItem) {
-    console.log("update locally: ", newItem.shortLink)
+export function addLocally(newItem) {
+    console.log("add locally: ", newItem.shortLink)
     try {
         let items = retriveLocally();
         items.push(newItem);
@@ -48,7 +48,20 @@ export function updateLocally(newItem) {
         
         return items;
     } catch (error) {
-        console.log("Erro na função updateLocally: ", error)
+        console.log("Erro na função addLocally: ", error)
+    }
+}
+
+export function deleteLocally(Id) {
+    try {
+        let items = retriveLocally();
+        let newArray = items.filter((item) => item.id != Id) || [];
+        
+        storeLocally(newArray);
+        
+        return newArray;
+    } catch (error) {
+        console.log("Erro na função deleteLocally: ", error)
     }
 }
 
@@ -59,4 +72,9 @@ export function hasValidURL(value) {
     } catch (error) {
         return false;
     }   
+}
+
+export function copyToClipboard(link) {
+    let currentUrl = window.location.href;
+    navigator.clipboard.writeText(currentUrl+link);
 }
