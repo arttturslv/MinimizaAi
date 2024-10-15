@@ -4,14 +4,11 @@ import { useState, useEffect } from "react";
 function Redirect() {
 
     const {id} = useParams();
-
-    const [isURLValid, setIsURLValid] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
-    
     const [hasError, setHasError] = useState(false);
 
-
     async function handleGet(id) {
+        console.log("Iniciando")
         setIsLoading(true); 
         const {data, error} = await alongar(id);
         setIsLoading(false);
