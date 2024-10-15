@@ -1,7 +1,7 @@
 export default function Button ({children, hasShadow=false, isLoading=false, ...props})  {
     return (
         <button {...props} type="submit" >
-            <div className={`p-2 bg-eerieBlack rounded-xl ${hasShadow?"shadow-s-input-box":null} transition-all hover:bg-eerieBlack/40 cursor-pointer`}>
+            <div className={`p-2 bg-eerieBlack rounded-xl ${hasShadow?"shadow-s-button":null} transition-all hover:bg-jet/30 cursor-pointer`}>
                 { !isLoading ?
                     children
                     :
