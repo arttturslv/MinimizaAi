@@ -43,7 +43,7 @@ export default function HistoryItem({shortLink, URL, Id, setUrlList}) {
                             wasCopied ? 
                             <p className="font-extralight text-celticBlue ">O link foi copiado!</p>
                                 :
-                            <p className="text-celticBlue underline">{shortLink}</p>
+                            <p className="text-celticBlue underline">{window.location.href}{shortLink}</p>
                         }
 
                         <img height={16} className="object-contain" src="https://i.imgur.com/6E7nm2P.png"  alt="icone de enviar" />
