@@ -33,7 +33,7 @@ function Redirect() {
                     <img className=" animate-spin " width={32} height={32} src="https://i.imgur.com/Jv0GKTg.png" alt="" srcset="" />
                 :
                     <div className="flex-col justify-center items-center ">
-                        <p className="text-[red]/50 font-semibold text-xl">Error desconhecido!</p>
+                        <p className="text-redWood font-semibold text-xl">Error desconhecido!</p>
                     </div>
 
             }

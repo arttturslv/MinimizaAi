@@ -19,7 +19,8 @@ export default {
       eerieBlackLight:"#1F2021",
       eerieBlackDark:"#1A1D1E",
       seaSalt:"#F7F9F9",
-      celticBlue:"#4472CA"
+      celticBlue:"#4472CA",
+      redWood: "#B0413E"
     }
   },
   plugins: [],
