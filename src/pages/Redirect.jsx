@@ -36,7 +36,7 @@ function Redirect() {
                         <img src="https://i.imgur.com/yFlD7Gw.png" alt="" />
                         <h1 className="text-seaSalt font-semibold text-xl">O endereço da web salvo neste link não está mais disponível.</h1>
                         <a className="text-seaSalt" href="/">
-                            <div className="bg-eerieBlack px-4 py-3 rounded-xl max-sm:hidden">
+                            <div className="bg-eerieBlack hover:bg-eerieBlackLight px-4 py-3 rounded-xl max-sm:hidden">
                                 <p className="text-seaSalt">Acessar a página inicial</p>
                             </div>
                         </a>
