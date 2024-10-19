@@ -59,7 +59,7 @@ export default function Input({togglePoliticaVisibility}) {
                             </Button>
                         </div>
                         { 
-                            !isURLValid && <p className="text-xs text-[red]/40 -mb-2">A link digitado não é válido! Verifique a presença do protocolo: "https://".</p>
+                            !isURLValid && <p className="text-xs text-[red]/40 -mb-3 pt-1">A link digitado não é válido! Verifique a presença do protocolo: "https://".</p>
                         }
                     </form>
                 </div>
