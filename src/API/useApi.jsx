@@ -1,9 +1,6 @@
 import {API} from './API.js'
-import { useEffect, useState } from 'react';
 
-
-
-export async function encurtar (inputValue) {
+export async function createShortURL (inputValue) {
     let data = null, error = null;
     
     try {
@@ -31,7 +28,7 @@ export async function encurtar (inputValue) {
 }
 
 
-export async function alongar (id) {
+export async function getOriginalURL (id) {
     let data = null, error = null;
     
     try {
