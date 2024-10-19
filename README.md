@@ -3,8 +3,10 @@
 ![screenshot](https://github.com/user-attachments/assets/b07dd54e-f73f-40e1-8648-6abe74ad95c1)
 
 <h3>Informações do projeto: </h3>
-Escreva sobre a ideia e sobre as ferramentas utilizadas.
-Este projeto foi desenvolvido para praticar o uso do React Native, bem como a utilização do React Navigation (stack) e o suporte a múltiplos idiomas com o i18next, que alterna entre português e inglês. O jogo está disponível em APK no GitHub.
+Este projeto foi desenvolvido para criar uma interface front-end que se comunica com o meu back-end em Node.js. Utilizei React junto com React DOM para manipulação das URLs, JavaScript, TailwindCSS e o Vercel.
+
+<h4>O back-end pode ser acessado em: </h4>
+https://github.com/arttturslv/url-shortener-node-js
 
 <h3>Features: </h3>
 • Gera links encurtados. <br>
