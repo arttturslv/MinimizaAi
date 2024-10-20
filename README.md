@@ -5,8 +5,7 @@
 <h3>Informações do projeto: </h3>
 Este projeto foi desenvolvido para criar uma interface front-end que se comunica com o meu back-end em Node.js. Utilizei React junto com React DOM para manipulação das URLs, JavaScript, TailwindCSS e o Vercel.
 
-<h4>O back-end pode ser acessado em: </h4>
-https://github.com/arttturslv/url-shortener-node-js
+<br><strong>Back-end:</strong> https://github.com/arttturslv/url-shortener-node-js
 
 <h3>Features: </h3>
 • Gera links encurtados. <br>
