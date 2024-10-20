@@ -51,7 +51,7 @@ export default function HistoryItem({shortLinkId, originalURL, id, setStoredUrls
                             <img height={16} className={`object-contain ${wasCopied?"animate-ping transition-transform":"null"}`} src={wasCopied? "https://i.imgur.com/iW8C4ho.png" :"https://i.imgur.com/6E7nm2P.png"}  alt="icone de enviar" />
                     </div>
                     
-                    <p className="hover:text-celticBlue underline cursor-pointer text-seaSalt text-wrap whitespace-break-spaces text-ellipsis break-all w-[90%]" onClick={() => openURL(URL)}>{URL}</p>
+                    <p className="hover:text-celticBlue underline cursor-pointer text-seaSalt text-wrap whitespace-break-spaces text-ellipsis break-all w-[90%]" onClick={() => openURL(originalURL)}>{originalURL}</p>
                 </span>
             </div>
 
