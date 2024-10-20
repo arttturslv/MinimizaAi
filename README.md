@@ -14,7 +14,7 @@ https://github.com/arttturslv/url-shortener-node-js
 • Permite excluir os links armazenados. <br>
 
 <h3>Status: </h3> 
-<img width="110px" src="https://i.imgur.com/yUlXqQK.png">
+<img width="110px" src="https://i.imgur.com/n8nELsw.png">
 
 <h3> Tecnologias Utilizadas</h3> 
 • React <br>
