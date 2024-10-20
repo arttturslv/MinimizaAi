@@ -39,10 +39,10 @@ export default function Input() {
 
     function storeLocally(response) {
         const objectURL = {
-            shortLink : response.encurtado,
-            original : response.original,
-            visitas : response.visitas,
-            data : response.data,
+            shortLinkId : response.shortLinkId,
+            originalURL : response.originalURL,
+            views : response.views,
+            date : response.date,
             id: response._id
         }
         addLocally(objectURL);

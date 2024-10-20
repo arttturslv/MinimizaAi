@@ -28,11 +28,11 @@ export async function createShortURL (inputValue) {
 }
 
 
-export async function getOriginalURL (id) {
+export async function getOriginalURL (shortLinkId) {
     let data = null, error = null;
     
     try {
-        const response = await fetch(`${API}${id}`, {
+        const response = await fetch(`${API}${shortLinkId}`, {
             method: 'GET',
         });
 
@@ -41,7 +41,7 @@ export async function getOriginalURL (id) {
         }
 
         const result = await response.json();
-        data = result.original;
+        data = result.originalURL;
 
     } catch (err) {
         console.log("Erro no GET: ", err)

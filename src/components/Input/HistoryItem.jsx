@@ -3,14 +3,14 @@ import { deleteById } from "../../API/useApi";
 import Button from "../Button";
 import { openURL, copyToClipboard, deleteLocally } from '../../API/Utils'
 
-export default function HistoryItem({shortLink, URL, Id, setStoredUrls}) {
+export default function HistoryItem({shortLinkId, originalURL, id, setStoredUrls}) {
     const [wasCopied, setWasCopied] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
-    function handleCopyLink(link) {
+    function handleCopyLink() {
         setWasCopied(true);
         try {
-            copyToClipboard(link);
+            copyToClipboard(shortLinkId);
             setTimeout(()=> {
                 setWasCopied(false)
             }, 1000)
@@ -23,8 +23,8 @@ export default function HistoryItem({shortLink, URL, Id, setStoredUrls}) {
         try {
             setIsLoading(true);
             
-            await deleteById(Id);
-            const newArray = await deleteLocally(Id)
+            await deleteById(id);
+            const newArray = await deleteLocally(id)
             setStoredUrls(newArray);
             
             setIsLoading(false);
@@ -38,7 +38,7 @@ export default function HistoryItem({shortLink, URL, Id, setStoredUrls}) {
         locationHREF = locationHREF.replace("https://"," ");
         locationHREF = locationHREF.replace("http://","");
 
-        let link = locationHREF + shortLink;
+        let link = locationHREF + shortLinkId;
         return link;
     }
 
@@ -46,7 +46,7 @@ export default function HistoryItem({shortLink, URL, Id, setStoredUrls}) {
         <div className="flex gap-3 my-2">
             <div className="max-w-[640px] w-full bg-eerieBlackDark px-4 py-2 rounded-xl text-seaSalt">
                 <span className="">
-                    <div onClick={() => handleCopyLink(shortLink)} className="flex gap-2 cursor-pointer">
+                    <div onClick={() => handleCopyLink()} className="flex gap-2 cursor-pointer">
                             <p className="text-celticBlue underline">{showShortLink()}</p>
                             <img height={16} className={`object-contain ${wasCopied?"animate-ping transition-transform":"null"}`} src={wasCopied? "https://i.imgur.com/iW8C4ho.png" :"https://i.imgur.com/6E7nm2P.png"}  alt="icone de enviar" />
                     </div>

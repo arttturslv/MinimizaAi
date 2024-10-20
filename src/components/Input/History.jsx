@@ -8,9 +8,9 @@ export default function History({ storedUrls, setStoredUrls }) {
                     {
                     storedUrls.map((item, index) => (
                         <HistoryItem key={index} 
-                            shortLink={item.shortLink}
-                            URL={item.original}  
-                            Id={item.id}
+                            shortLinkId={item.shortLinkId}
+                            originalURL={item.originalURL}  
+                            id={item.id}
                             setStoredUrls={setStoredUrls}
                         />
                     ))
