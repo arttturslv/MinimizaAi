@@ -39,7 +39,7 @@ export function retriveLocally() {
  * @returns A lista atualizada.
  */
 export function addLocally(newItem) {
-    console.log("add locally: ", newItem.shortLink)
+    console.log("add locally: ", newItem.shortLinkId)
     try {
         let items = retriveLocally();
         items.push(newItem);
@@ -74,7 +74,7 @@ export function hasValidURL(value) {
     }   
 }
 
-export function copyToClipboard(link) {
+export function copyToClipboard(shortLinkId) {
     let currentUrl = window.location.href;
-    navigator.clipboard.writeText(currentUrl+link);
+    navigator.clipboard.writeText(currentUrl+shortLinkId);
 }

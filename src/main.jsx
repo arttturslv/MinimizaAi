@@ -1,5 +1,6 @@
 import Home from "./pages/Home";
 import Redirect from "./pages/Redirect";
+import NotFound from "./pages/NotFound";
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import * as React from "react";
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/:id",
     element: <Redirect/>
+  },
+  {
+    path: "*",
+    element: <NotFound/>
   }
 ])
 

@@ -1,8 +1,27 @@
-# React + Vite
+<h1> Minimiza aí</h1> 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![screenshot](https://github.com/user-attachments/assets/b07dd54e-f73f-40e1-8648-6abe74ad95c1)
 
-Currently, two official plugins are available:
+<h3>Informações do projeto: </h3>
+Este projeto foi desenvolvido para criar uma interface front-end que se comunica com o meu back-end em Node.js. Utilizei React junto com React DOM para manipulação das URLs, JavaScript, TailwindCSS e o Vercel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h4>O back-end pode ser acessado em: </h4>
+https://github.com/arttturslv/url-shortener-node-js
+
+<h3>Features: </h3>
+• Gera links encurtados. <br>
+• Armazena os links localmente e na nuvem. <br>
+• Permite excluir os links armazenados. <br>
+
+<h3>Status: </h3> 
+<img width="110px" src="https://i.imgur.com/yUlXqQK.png">
+
+<h3> Tecnologias Utilizadas</h3> 
+• React <br>
+• JavaScript <br>
+• TailwindCSS <br>
+• React Dom <br>
+• Vercel <br>
+
+<h3> Configuração e Execução</h3>
+Para utilizar o projeto, basta acessar: https://s.artttur.com

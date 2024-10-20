@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       boxShadow: {
+        's-button-active': 'inset 4px 4px 10px 0px rgba(0, 0, 0, 0.4), inset -2px -2px 10px 0px rgba(255, 255, 255, 0.08)',
         's-button': '4px 4px 10px 0px rgba(0, 0, 0, 0.4),  -2px -2px 10px 0px rgba(255, 255, 255, 0.08)',
         's-input-box': '4px 4px 10px 0px rgba(0, 0, 0, 0.5), -4px -4px 5px 0px rgba(255, 255, 255, 0.08)',
         's-input': 'inset 4px 4px 10px 0px rgba(0, 0, 0, 0.4), inset -4px -4px 10px 0px rgba(255, 255, 255, 0.08)',
@@ -18,7 +19,8 @@ export default {
       eerieBlackLight:"#1F2021",
       eerieBlackDark:"#1A1D1E",
       seaSalt:"#F7F9F9",
-      celticBlue:"#4472CA"
+      celticBlue:"#4472CA",
+      redWood: "#B0413E"
     }
   },
   plugins: [],
